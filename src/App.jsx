@@ -1,122 +1,155 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
+import { useState } from 'react';
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+
+  const [color, setColor] = useState("white");
 
   return (
-    <>
-      <section id="center">
-        <div className="hero">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
-        </div>
-        <div>
-          <h1>Get started</h1>
-          <p>
-            Edit <code>src/App.jsx</code> and save to test <code>HMR</code>
-          </p>
-        </div>
-        <button
-          type="button"
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
-        >
-          Count is {count}
-        </button>
-      </section>
+    <div 
+      className="w-full h-screen duration-300"
+      style={{ backgroundColor: color }}
+    >
 
-      <div className="ticks"></div>
+      {/* Bottom Center Bar */}
+      <div 
+        className="fixed bottom-10 left-1/2 transform -translate-x-1/2"
+      >
+        {/*
+          HOW CENTERING WORKS:
 
-      <section id="next-steps">
-        <div id="docs">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#documentation-icon"></use>
-          </svg>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
-          <ul>
-            <li>
-              <a href="https://vite.dev/" target="_blank">
-                <img className="logo" src={viteLogo} alt="" />
-                Explore Vite
-              </a>
-            </li>
-            <li>
-              <a href="https://react.dev/" target="_blank">
-                <img className="button-icon" src={reactLogo} alt="" />
-                Learn more
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div id="social">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#social-icon"></use>
-          </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
-          <ul>
-            <li>
-              <a href="https://github.com/vitejs/vite" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#github-icon"></use>
-                </svg>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://chat.vite.dev/" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#discord-icon"></use>
-                </svg>
-                Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/vite_js" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#x-icon"></use>
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#bluesky-icon"></use>
-                </svg>
-                Bluesky
-              </a>
-            </li>
-          </ul>
-        </div>
-      </section>
+          left-1/2 → moves element to 50% from left
+          -translate-x-1/2 → moves it back by 50% of its own width
 
-      <div className="ticks"></div>
-      <section id="spacer"></section>
-    </>
+          RESULT → perfectly centered horizontally
+        */}
+
+        <div className="flex flex-wrap justify-center gap-4 shadow-lg bg-white px-4 py-3 rounded-xl">
+
+          {/* RED */}
+          <div className="flex flex-col items-center">
+            <button 
+              className="w-10 h-10 rounded-full bg-red-500 hover:bg-red-600"
+              onClick={() => setColor("red")}
+            />
+            <span className="text-xs mt-1">Red</span>
+          </div>
+
+          {/* GREEN */}
+          <div className="flex flex-col items-center">
+            <button 
+              className="w-10 h-10 rounded-full bg-green-500 hover:bg-green-600"
+              onClick={() => setColor("green")}
+            />
+            <span className="text-xs mt-1">Green</span>
+          </div>
+
+          {/* BLUE */}
+          <div className="flex flex-col items-center">
+            <button 
+              className="w-10 h-10 rounded-full bg-blue-500 hover:bg-blue-600"
+              onClick={() => setColor("blue")}
+            />
+            <span className="text-xs mt-1">Blue</span>
+          </div>
+
+          {/* YELLOW */}
+          <div className="flex flex-col items-center">
+            <button 
+              className="w-10 h-10 rounded-full bg-yellow-500 hover:bg-yellow-600"
+              onClick={() => setColor("yellow")}
+            />
+            <span className="text-xs mt-1">Yellow</span>
+          </div>
+
+          {/* PURPLE */}
+          <div className="flex flex-col items-center">
+            <button 
+              className="w-10 h-10 rounded-full bg-purple-500 hover:bg-purple-600"
+              onClick={() => setColor("purple")}
+            />
+            <span className="text-xs mt-1">Purple</span>
+          </div>
+
+          {/* PINK */}
+          <div className="flex flex-col items-center">
+            <button 
+              className="w-10 h-10 rounded-full bg-pink-500 hover:bg-pink-600"
+              onClick={() => setColor("pink")}
+            />
+            <span className="text-xs mt-1">Pink</span>
+          </div>
+
+          {/* ORANGE */}
+          <div className="flex flex-col items-center">
+            <button 
+              className="w-10 h-10 rounded-full bg-orange-500 hover:bg-orange-600"
+              onClick={() => setColor("orange")}
+            />
+            <span className="text-xs mt-1">Orange</span>
+          </div>
+
+          {/* CYAN */}
+          <div className="flex flex-col items-center">
+            <button 
+              className="w-10 h-10 rounded-full bg-cyan-500 hover:bg-cyan-600"
+              onClick={() => setColor("cyan")}
+            />
+            <span className="text-xs mt-1">Cyan</span>
+          </div>
+
+          {/* LIME */}
+          <div className="flex flex-col items-center">
+            <button 
+              className="w-10 h-10 rounded-full bg-lime-500 hover:bg-lime-600"
+              onClick={() => setColor("lime")}
+            />
+            <span className="text-xs mt-1">Lime</span>
+          </div>
+          <div className="flex flex-col items-center">
+  <button 
+    className="w-10 h-10 rounded-full bg-white border"
+    onClick={() => setColor("white")}
+  />
+  <span className="text-xs mt-1">White</span>
+</div>
+{/* TEAL */}
+<div className="flex flex-col items-center">
+  <button 
+    className="w-10 h-10 rounded-full bg-teal-500 hover:bg-teal-600"
+    onClick={() => setColor("teal")}
+  />
+  <span className="text-xs mt-1">Teal</span>
+</div>
+
+{/* INDIGO */}
+<div className="flex flex-col items-center">
+  <button 
+    className="w-10 h-10 rounded-full bg-indigo-500 hover:bg-indigo-600"
+    onClick={() => setColor("indigo")}
+  />
+  <span className="text-xs mt-1">Indigo</span>
+
+  
+</div>
+
+{/* SKY */}
+<div className="flex flex-col items-center">
+  <button 
+    className="w-10 h-10 rounded-full bg-sky-500 hover:bg-sky-600"
+    onClick={() => setColor("skyblue")}
+  />
+  <span className="text-xs mt-1">Sky</span>
+</div>
+
+
+
+
+        </div>
+      </div>
+
+    </div>
   )
 }
 
-export default App
+export default App;
